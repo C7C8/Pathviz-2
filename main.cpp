@@ -1,3 +1,4 @@
+#include <SDL2/SDL.h>
 #include "SimUtils.h"
 #include "DijkstraAlgo.h"
 #include "AStarAlgo.h"
@@ -12,8 +13,6 @@ int main(int argc, char* argv[])
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	SDL_Init(SDL_INIT_VIDEO);
-	IMG_Init(IMG_INIT_PNG);
-
 	window = SDL_CreateWindow("Pathviz-2",  SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 			WINX_SIZE, WINY_SIZE, SDL_WINDOW_SHOWN);
 	if (window == nullptr)
@@ -281,7 +280,6 @@ int main(int argc, char* argv[])
 		SDL_RenderPresent(renderer);
 	}
 
-	IMG_Quit();
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();

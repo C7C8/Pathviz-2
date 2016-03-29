@@ -1,9 +1,9 @@
-CMD = g++ -std=c++1y -I/usr/local/include -I/usr/include/SDL2 -w -O0 -g3 -Wall -c -fmessage-length=0 
+CMD = g++ -std=c++1y -w -O0 -g3 -Wall -c
 
 all: Pathviz-2
 
 Pathviz-2: main Timer PathAlgo SimUtils AStarAlgo DijkstraAlgo MazeGeneratorDepth
-	g++ -L/usr/lib -L/usr/local/lib -Xlinker -lSDL2 -lSDL2_image -o "Pathviz-2" main.o Timer.o AStarAlgo.o DijkstraAlgo.o MazeGeneratorDepth.o PathAlgo.o SimUtils.o
+	g++ -Xlinker -lSDL2 -o "Pathviz-2" main.o Timer.o AStarAlgo.o DijkstraAlgo.o MazeGeneratorDepth.o PathAlgo.o SimUtils.o
 main: main.cpp
 	$(CMD) main.cpp
 Timer: Timer.h Timer.cpp
