@@ -1,9 +1,2 @@
-*.cproject
-*.project
-*.png
-*.gch
-*.json
-.imdone/
-Debug/
-sysLog.txt
-/Release/
+*.o
+Pathviz-2

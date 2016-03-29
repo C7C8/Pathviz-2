@@ -15,14 +15,14 @@ version for windows is planned.
 ##Algorithms/Modes
 To switch modes, press keys 1-8:
 
-1 - Dijkstra's
-2 - A* with euclidean heuristic
-3 - A* with euclidean heuristic, no diagonals.
-4 - A* with manhattan heuristic
-5 - A* with manhattan heuristic, no diagonals
-6 - A* with Chebyshev heuristic
-7 - A* with Chebyshev heuristic, no diagonals
-8 - Maze generator, depth-first
+1. Dijkstra's
+2. A* with euclidean heuristic
+3. A* with euclidean heuristic, no diagonals.
+4. A* with manhattan heuristic
+5. A* with manhattan heuristic, no diagonals
+6. A* with Chebyshev heuristic
+7. A* with Chebyshev heuristic, no diagonals
+8. Maze generator, depth-first
 
 
 ##Controls
