@@ -48,6 +48,27 @@ to generate a random maze for you, but it will not be written to the barrier
 map until complete.
 
 
-##Compiling
-You will need to install libsdl2-dev and libsdl2. Then simply extract the
-source files to a folder and run "make" to compile.
+##Compililing
+You can download a .tar.gz file from the "releases" tab and do the typical compile dance once extracted:
+
+    ./configure
+    make
+
+...or you can download the latest code and do this instead:
+
+    aclocal
+    autoconf
+    automake --add-missing
+    ./configure
+    make
+    
+Make sure you have the SDL2 development libraries installed!
+
+##Verification
+If you don't know what this is, you don't need to worry about it. Otherwise, use the password you were given.
+
+EnCt228679fd94bbd8a9fe027be29497fd523b1ef9cc128679fd94bbd8a9fe027be296JW5LlmDwgF
+2piooMldPHpcmf2uNVTqc5qY411ZZfXWjNCB1y6j0tzQUgDi2jMN/2+aX/23RLi7U829faxG6Bb52euf
+DAkoDomI/GF00+q6SN/ljymYDDqH96V8=IwEmS
+
+Decrypt it at https://encipher.it
