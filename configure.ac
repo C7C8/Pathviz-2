@@ -1,0 +1,15 @@
+AC_INIT([Pathviz-2], [1.0], [tothemyers@gmail.com])
+AM_INIT_AUTOMAKE
+CXXFLAGS="$CXXFLAGS -std=c++1y"
+AC_PROG_CXX
+AC_LANG([C++])
+
+dnl Check for SDL
+SDL_VERSION=2.0.0
+AM_PATH_SDL2($SDL_VERSION, :, AC_MSG_ERROR([*** SDL version $SDL_VERSION not found!]))
+CFLAGS="$CFLAGS $SDL_CFLAGS"
+CFLAGS="$CFLAGS $SDL_CFLAGS"
+LIBS="$LIBS $SDL_LIBS"
+
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
