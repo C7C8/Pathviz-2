@@ -16,20 +16,17 @@ bool AStarAlgo::step()
 
 	//Pre-check
 	if (blocked || complete)
+	{
+		if (openList.size() == 0)
+			blocked = true;
 		return false;
+	}
 
 	//Setup initial conditions
 	if (openList.count(*startLoc) == 0 && closedList.count(*startLoc) == 0)
 	{
 		startLNode.f = 0;
 		openList[*startLoc] = startLNode;
-	}
-
-	//Make sure the algorithm isn't blocked
-	if (openList.size() == 0)
-	{
-		blocked = true;
-		return false;
 	}
 
 	//Get the lowest F-val node - sorting won't work here.
