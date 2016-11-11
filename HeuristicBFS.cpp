@@ -1,6 +1,6 @@
-#include "AStarAlgo.h"
+#include "HeuristicBFS.h"
 
-AStarAlgo::AStarAlgo(bool** newBars,
+HeuristicBFS::HeuristicBFS(bool** newBars,
 	SDL_Point* newSLoc,
 	SDL_Point* newELoc,
 	float (*newHeur)(SDL_Point, SDL_Point),
@@ -10,7 +10,7 @@ AStarAlgo::AStarAlgo(bool** newBars,
 	diagonal = newDiag;
 }
 
-bool AStarAlgo::step()
+bool HeuristicBFS::step()
 {
 	//Basically the same as Dijkstra's, but with a HEURISTIC!
 
@@ -31,7 +31,7 @@ bool AStarAlgo::step()
 
 	//Get the lowest F-val node - sorting won't work here.
 	SDL_Point currentCoord;
-	AStNode currentNode;
+	Node currentNode;
 	float lowVal = 9999999;
 	for (auto iter = openList.begin(); iter != openList.end(); iter++)
 	{
@@ -70,7 +70,7 @@ bool AStarAlgo::step()
 				return false;
 			}
 
-			AStNode newNode;
+			Node newNode;
 			newNode.g = currentNode.g + 1;
 			newNode.parent = currentCoord; //Parents the new node to the current node coords
 			if (iX && iY)
@@ -101,7 +101,7 @@ bool AStarAlgo::step()
 	return true;
 }
 
-void AStarAlgo::reset()
+void HeuristicBFS::reset()
 {
 	openList.clear();
 	closedList.clear();
@@ -109,7 +109,7 @@ void AStarAlgo::reset()
 	blocked = false;
 }
 
-void AStarAlgo::drawAll(SDL_Renderer* renderer)
+void HeuristicBFS::drawAll(SDL_Renderer* renderer)
 {
 	//Open nodes
 	for (auto iter = openList.begin(); iter != openList.end(); iter++)

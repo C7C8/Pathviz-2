@@ -1,7 +1,6 @@
 #include <SDL2/SDL.h>
 #include "SimUtils.h"
-#include "DijkstraAlgo.h"
-#include "AStarAlgo.h"
+#include "HeuristicBFS.h"
 #include "MazeGeneratorDepth.h"
 #include "Timer.h"
 #include <iostream>
@@ -43,14 +42,14 @@ int main(int argc, char* argv[])
 	bool lBtnHld = false, rBtnHld = false;
 	bool algoPaused = true;
 
-	PathAlgo* djkalgo 		= new AStarAlgo(barriers, &startLoc, &endLoc, &nullHeuristic);
-	PathAlgo* astalgo 		= new AStarAlgo(barriers, &startLoc, &endLoc, &euclidHeuristic);
-	PathAlgo* astalgoNDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &euclidHeuristic, false);
-	PathAlgo* astMnhtDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &manhattanHeuristic);
-	PathAlgo* astMnhtNDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &manhattanHeuristic, false);
-	PathAlgo* astChebDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &chebyshevHeuristic);
-	PathAlgo* astChebNDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &chebyshevHeuristic, false);
-	PathAlgo* mazeGenerate 		= new MazeGeneratorDepth(barriers, &startLoc, &endLoc);
+	PathAlgo* djkalgo 	= new HeuristicBFS(barriers, &startLoc, &endLoc, &nullHeuristic);
+	PathAlgo* astalgo 	= new HeuristicBFS(barriers, &startLoc, &endLoc, &euclidHeuristic);
+	PathAlgo* astalgoNDiag	= new HeuristicBFS(barriers, &startLoc, &endLoc, &euclidHeuristic, false);
+	PathAlgo* astMnhtDiag	= new HeuristicBFS(barriers, &startLoc, &endLoc, &manhattanHeuristic);
+	PathAlgo* astMnhtNDiag	= new HeuristicBFS(barriers, &startLoc, &endLoc, &manhattanHeuristic, false);
+	PathAlgo* astChebDiag	= new HeuristicBFS(barriers, &startLoc, &endLoc, &chebyshevHeuristic);
+	PathAlgo* astChebNDiag	= new HeuristicBFS(barriers, &startLoc, &endLoc, &chebyshevHeuristic, false);
+	PathAlgo* mazeGenerate 	= new MazeGeneratorDepth(barriers, &startLoc, &endLoc);
 	PathAlgo* currentAlgo = astalgo;
 
 	//Game loop-relevant things
