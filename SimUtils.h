@@ -18,6 +18,7 @@ enum colorTypes {BLANK, BARRIER, CLOSED, OPEN, PATH, START, END};
 void drawCell(SDL_Renderer* renderer, int cellXPos, int cellYPos, colorTypes color);
 
 //Heuristic functions
+float nullHeuristic(SDL_Point pos, SDL_Point endLoc);
 float euclidHeuristic(SDL_Point pos, SDL_Point endLoc);
 float manhattanHeuristic(SDL_Point pos, SDL_Point endLoc);
 float chebyshevHeuristic(SDL_Point pos, SDL_Point endLoc);

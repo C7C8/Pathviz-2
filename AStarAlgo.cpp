@@ -35,7 +35,7 @@ bool AStarAlgo::step()
 	float lowVal = 9999999;
 	for (auto iter = openList.begin(); iter != openList.end(); iter++)
 	{
-		if (iter->second.f < lowVal)
+		if (iter->second.f < lowVal) //vg ack 
 		{
 			lowVal = iter->second.f;
 			currentCoord = iter->first;
@@ -81,7 +81,7 @@ bool AStarAlgo::step()
 				openList[newCoord] = newNode;
 			if (openList.count(newCoord) > 0)
 			{
-				if (openList[newCoord].f > newNode.f)
+				if (openList[newCoord].f > newNode.f) //vg ack, REMOVE MAP USAGE!
 					openList[newCoord] = newNode;
 				else
 					continue;

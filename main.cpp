@@ -43,8 +43,8 @@ int main(int argc, char* argv[])
 	bool lBtnHld = false, rBtnHld = false;
 	bool algoPaused = true;
 
-	PathAlgo* djkalgo 			= new DijkstraAlgo(barriers, &startLoc, &endLoc);
-	PathAlgo* astalgo 			= new AStarAlgo(barriers, &startLoc, &endLoc, &euclidHeuristic);
+	PathAlgo* djkalgo 		= new AStarAlgo(barriers, &startLoc, &endLoc, &nullHeuristic);
+	PathAlgo* astalgo 		= new AStarAlgo(barriers, &startLoc, &endLoc, &euclidHeuristic);
 	PathAlgo* astalgoNDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &euclidHeuristic, false);
 	PathAlgo* astMnhtDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &manhattanHeuristic);
 	PathAlgo* astMnhtNDiag		= new AStarAlgo(barriers, &startLoc, &endLoc, &manhattanHeuristic, false);
@@ -66,14 +66,14 @@ int main(int argc, char* argv[])
 		{
 			if (event.type == SDL_QUIT)
 				quit = true;
-			if (event.button.button == SDL_BUTTON_RIGHT)
+			if (event.button.button == SDL_BUTTON_RIGHT) //vg ack nf, sdl shit
 			{
 				if (event.button.type == SDL_MOUSEBUTTONDOWN)
 				rBtnHld = true;
 				if (event.button.type == SDL_MOUSEBUTTONUP)
 				rBtnHld = false;
 			}
-			if (event.button.button == SDL_BUTTON_LEFT)
+			if (event.button.button == SDL_BUTTON_LEFT) //vg ack nf, sdl shit
 			{
 				if (event.button.type == SDL_MOUSEBUTTONDOWN)
 					lBtnHld = true;

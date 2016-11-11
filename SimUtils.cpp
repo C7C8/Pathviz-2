@@ -13,6 +13,11 @@ bool compare_points::operator()(const SDL_Point& val1, const SDL_Point& val2) co
   return false; //Is the same; is not less than
 }
 
+float nullHeuristic(SDL_Point pos, SDL_Point endLoc)
+{
+	return 0; //used for Dijstkra's.
+}
+
 float euclidHeuristic(SDL_Point pos, SDL_Point endLoc)
 {
   return sqrt(pow(pos.x - endLoc.x, 2) + pow(pos.y - endLoc.y, 2));
