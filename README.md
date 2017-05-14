@@ -1,4 +1,4 @@
-#Pathviz-2
+# Pathviz-2
 
 Pathviz-2 is a small visualizer for pathfinding algorithms. Upon starting, the
 selected algorithm will try to find its way from the bright green tile (start) 
@@ -25,7 +25,7 @@ To switch modes, press keys 1-8:
 8. Maze generator, depth-first
 
 
-##Controls
+## Controls
 To draw barriers (orange) in free space (blue), left-click and drag. To erase
 barriers, right-click and drag.
 
@@ -39,7 +39,7 @@ Keys:
 * PGUP - Increase barrier brush size
 * PGDN - Decrease barrier brush size
 
-###Maze generator
+### Maze generator
 The maze generator does not behave like the other algorithms. It still starts
 at the green start tile, but when selected the screen is filled with orange
 barriers that are not truly there; thus any changes you make to barriers will
@@ -48,7 +48,7 @@ to generate a random maze for you, but it will not be written to the barrier
 map until complete.
 
 
-##Compililing
+## Compiling
 You can download a .tar.gz file from the "releases" tab and do the typical compile dance once extracted:
 
     ./configure
@@ -63,12 +63,3 @@ You can download a .tar.gz file from the "releases" tab and do the typical compi
     make
     
 Make sure you have the SDL2 development libraries installed!
-
-##Verification
-If you don't know what this is, you don't need to worry about it. Otherwise, use the password you were given.
-
-EnCt228679fd94bbd8a9fe027be29497fd523b1ef9cc128679fd94bbd8a9fe027be296JW5LlmDwgF
-2piooMldPHpcmf2uNVTqc5qY411ZZfXWjNCB1y6j0tzQUgDi2jMN/2+aX/23RLi7U829faxG6Bb52euf
-DAkoDomI/GF00+q6SN/ljymYDDqH96V8=IwEmS
-
-Decrypt it at https://encipher.it
